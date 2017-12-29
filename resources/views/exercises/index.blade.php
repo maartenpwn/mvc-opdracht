@@ -6,13 +6,13 @@
   </head>
   <body>
     <h1>Exercises</h1>
-    
+
     <ul>
-    @foreach ($exercises as $exercise)
-      <li>
-        {{ $exercise->title }}
-      </li>
-    @endforeach
+      @foreach ($exercises as $exercise)
+        <li>
+          <a href="exercises/{{ $exercise->id }}" >{{ $exercise->title }}</a>
+        </li>
+      @endforeach
     </ul>
 
   </body>
