@@ -4,10 +4,13 @@
 
 <div class="container">
     <div class="row">
+      <h1>Welcome</h1>
 
-      <h1>{{ $exercise->title }}</h1>
-
-    </div>
+      <ul>
+        <li>/exercises</li>
+        <li>/exercises/id</li>
+      </ul>
+  </div>
 </div>
 
 @endsection('content')
