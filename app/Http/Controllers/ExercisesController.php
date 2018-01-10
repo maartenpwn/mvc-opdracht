@@ -17,4 +17,26 @@ class ExercisesController extends Controller
     return view('exercises.show', compact ('exercise'));
   }
 
+  // Form
+  public function create() {
+    return view('exercises.create');
+  }
+
+  public function store() {
+    // Validation
+    $this->validate(request(), [
+      'title' => 'required',
+      'body'  => 'required'
+    ]);
+
+    // Creating the post
+    Exercise::create(request([
+      'title',
+      'body'
+    ]));
+
+    // Redicrect after succes
+    return redirect('/');
+  }
+
 }
