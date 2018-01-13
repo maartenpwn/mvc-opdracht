@@ -1,7 +1,8 @@
 <?php
 
 Route::get('/', 'ExercisesController@index');
-// Route::get('/exercises/{exercise}', 'ExercisesController@show');
+Route::get('/exercises/{exercise}', 'ExercisesController@show');
+Route::get('/exercises/{exercise}/delete', 'ExercisesController@delete');
 
 // Auth
 Auth::routes();

@@ -7,6 +7,8 @@
 
       <h1>{{ $exercise->title }}</h1>
 
+      <a href="{{ $exercise->id }}/delete">Delete</a>
+
     </div>
 </div>
 

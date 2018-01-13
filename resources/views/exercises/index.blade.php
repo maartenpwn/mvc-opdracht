@@ -13,8 +13,9 @@
           </li>
         @endforeach
       </ul>
-
     </div>
+
+    <a href="create">Add new exercise</a>
 </div>
 
 @endsection('content')

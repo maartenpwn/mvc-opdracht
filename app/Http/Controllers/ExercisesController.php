@@ -39,4 +39,9 @@ class ExercisesController extends Controller
     return redirect('/');
   }
 
+  public function delete(Exercise $exercise) {
+    $exercise->delete();
+    return redirect('/');
+  }
+
 }
