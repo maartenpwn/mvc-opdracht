@@ -8,8 +8,14 @@ use App\Exercise;
 class ExercisesController extends Controller
 {
 
-  public function index() {
-    $exercises = Exercise::all();
+  public function index(Request $request) {
+    if($request->has('filter')){
+      $exercises = Exercise::all()->where('musclegroup', $request->get('filter'));
+    }
+    else {
+      $exercises = Exercise::all();
+    }
+
     return view('exercises.index', compact('exercises'));
   }
 
@@ -26,12 +32,14 @@ class ExercisesController extends Controller
     // Validation
     $this->validate(request(), [
       'title' => 'required',
+      'musclegroup' => 'required',
       'body'  => 'required'
     ]);
 
     // Creating the post
     Exercise::create(request([
       'title',
+      'musclegroup',
       'body'
     ]));
 
