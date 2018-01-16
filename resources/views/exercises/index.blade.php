@@ -5,6 +5,19 @@
 <div class="container">
     <div class="row">
 
+      <!-- temp search -->
+      <!-- <form method="POST" action="tasks"> -->
+      <form method="GET" action="{{ url('/')}}">
+
+        <div class="form-group">
+          <label for="search">search</label>
+          <input type="text" class="form-control" id="search" name="search">
+        </div>
+
+        <button type="submit" class="btn btn-primary">search</button>
+      </form>
+      <!-- end temp serach -->
+
       <h2>Filter</h2>
       <ul>
         <li><a href="{{ url('/?filter=chest')}}">Chest</a></li>

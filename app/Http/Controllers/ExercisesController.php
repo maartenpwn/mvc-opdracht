@@ -12,6 +12,14 @@ class ExercisesController extends Controller
     if($request->has('filter')){
       $exercises = Exercise::all()->where('musclegroup', $request->get('filter'));
     }
+    if($request->has('search')){
+
+      // search musscle group
+      $exercises = Exercise::where('musclegroup', 'like', '%' . $request->get('search') . '%')->get();
+
+      // search title
+      $exercises = Exercise::where('title', 'like', '%' . $request->get('search') . '%')->get();
+    }
     else {
       $exercises = Exercise::all();
     }
