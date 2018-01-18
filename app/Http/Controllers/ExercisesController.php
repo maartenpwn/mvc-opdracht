@@ -9,17 +9,25 @@ class ExercisesController extends Controller
 {
 
   public function index(Request $request) {
+    // Filter
     if($request->has('filter')){
       $exercises = Exercise::all()->where('musclegroup', $request->get('filter'));
     }
+
+    // Search
     if($request->has('search')){
+      $exercises = Exercise::
+        where('musclegroup', 'like', '%' . $request->get('search') . '%')->
+        orwhere('title', 'like', '%' . $request->get('search') . '%')->
+      get();
 
-      // search musscle group
-      $exercises = Exercise::where('musclegroup', 'like', '%' . $request->get('search') . '%')->get();
+      // search - no result
+      if ($exercises->isEmpty()) {
+        dd('This exercise doesnt exist');
+      }
 
-      // search title
-      $exercises = Exercise::where('title', 'like', '%' . $request->get('search') . '%')->get();
     }
+
     else {
       $exercises = Exercise::all();
     }
