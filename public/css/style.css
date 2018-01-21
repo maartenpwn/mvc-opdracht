@@ -1,0 +1,137 @@
+/* human filter */
+#filter.show-front .human-front,
+#filter.show-front .legs-area,
+#filter.show-front .chest-area,
+#filter.show-front .shoulders-area {
+  display: block;
+}
+
+#filter.show-back .human-back,
+#filter.show-back .back-area {
+  display: block;
+}
+
+#filter.show-front .legs-area:hover,
+#filter.show-front .shoulders-area:hover,
+#filter.show-front .chest-area:hover {
+  opacity: 1;
+}
+
+#filter.show-back .back-area:hover {
+  opacity: 1;
+}
+
+#filter .human-front,
+#filter .human-back {
+  display: none;
+}
+
+#filter {
+  position: relative;;
+}
+
+#filter .bodypart {
+  position: absolute;
+  cursor: pointer;
+  display: none;
+}
+
+.chest-area {
+  background-image: url('../../resources/assets/img/chest.png');
+  width: 123px;
+  height: 88px;
+  top: 100px;
+  left: 75px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.legs-area {
+  background-image: url('../../resources/assets/img/legs.png');
+  width: 120px;
+  height: 279px;
+  top: 282px;
+  left: 76px;
+  opacity: 0;
+}
+
+.shoulders-area {
+  background-image: url('../../resources/assets/img/shoulders.png');
+  width: 182px;
+  height: 79px;
+  top: 100px;
+  left: 45px;
+  opacity: 0;
+}
+
+.back-area {
+  background-image: url('../../resources/assets/img/back.png');
+  width: 118px;
+  height: 185px;
+  top: 87px;
+  left: 76px;
+  opacity: 0;
+}
+
+.fa {
+  font-size: 20px !important;
+  padding-left: 5px;
+}
+
+.rotate-button {
+  margin-top: 20px;
+  margin-left: 94px;
+}
+
+.red {
+  color: red;
+}
+
+.grey {
+  color: #636b6f;
+}
+
+.green {
+  color: #16c116;
+}
+
+.too-long {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+}
+
+/* Comments */
+.comments {
+  margin-top: 15px;
+}
+
+.thumbnail {
+    padding:0px;
+}
+.panel {
+	position:relative;
+}
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+	position:absolute;
+	top:11px;left:-16px;
+	right:100%;
+	width:0;
+	height:0;
+	display:block;
+	content:" ";
+	border-color:transparent;
+	border-style:solid solid outset;
+	pointer-events:none;
+}
+.panel>.panel-heading:after{
+	border-width:7px;
+	border-right-color:#f7f7f7;
+	margin-top:1px;
+	margin-left:2px;
+}
+.panel>.panel-heading:before{
+	border-right-color:#ddd;
+	border-width:8px;
+}

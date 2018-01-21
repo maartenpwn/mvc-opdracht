@@ -1,31 +1,44 @@
-<h1>create a post</h1>
+@extends('layouts.app')
 
-<div class="row">
+@section('content')
 
-  <!-- <form method="POST" action="tasks"> -->
-  <form method="POST" action="{{ url('/home')}}">
-    <!-- Generates a unique hidden token, for security reasons  -->
-    {{ csrf_field() }}
+<div class="container">
+    <div class="row">
+        <h1>create a post</h1>
 
-    <div class="form-group">
-      <label for="title">title</label>
-      <input type="text" class="form-control" id="title" name="title">
-    </div>
+        <form method="POST" action="{{ url('/create/exercise')}}">
 
-    <div class="form-group">
-      <label for="musclegroup">musclegroup</label>
-      <input type="text" class="form-control" id="musclegroup" name="musclegroup">
-    </div>
+          {{ csrf_field() }}
 
-    <div class="form-group">
-      <label for="body">Body</label>
-      <textarea id="body" name="body" class="form-control"></textarea>
-    </div>
+          <div class="form-group">
+            <label for="title">title</label>
+            <input type="text" class="form-control" id="title" name="title">
+          </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+          <div class="form-group">
+            <label for="musclegroup">musclegroup</label>
+            <select class="form-control" id="musclegroup" name="musclegroup">
+              <option>chest</option>
+              <option>back</option>
+              <option>shoulders</option>
+              <option>legs</option>
+            </select>
+          </div>
 
-  <!-- validation message -->
-  @include ('layouts.errors')
+          <div class="form-group">
+            <label for="body">Body</label>
+            <textarea id="body" name="body" class="form-control"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- validation message -->
+        @include ('layouts.errors')
+
+      </div>
+</div>
 
 </div>
+
+@endsection('content')

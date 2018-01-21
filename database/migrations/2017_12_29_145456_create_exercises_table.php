@@ -18,6 +18,8 @@ class CreateExercisesTable extends Migration
             $table->text('title');
             $table->text('body');
             $table->string('musclegroup');
+            $table->integer('active');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
