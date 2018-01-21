@@ -21,6 +21,7 @@ class ExercisesController extends Controller
         ->where('musclegroup', $request->get('filter'))
         ->where('active', 1);
     }
+
     else {
       $exercises = Exercise::all()->where('active', 1);
     }
